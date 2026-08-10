@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore how the GitHub Copilot app helps you run parallel work, stay focused, and collaborate with agents."
+    />
+    <title>Build at the speed of thought | GitHub Copilot</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#experience">Skip to experience</a>
+
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="GitHub Copilot home">
+        <svg class="octicon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.02c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.57-.3-5.27-1.29-5.27-5.7 0-1.27.45-2.3 1.2-3.1-.12-.3-.52-1.47.11-3.06 0 0 .98-.31 3.17 1.18a10.9 10.9 0 0 1 5.77 0c2.2-1.5 3.17-1.18 3.17-1.18.63 1.6.23 2.77.11 3.06.75.8 1.2 1.83 1.2 3.1 0 4.43-2.7 5.4-5.28 5.69.42.36.79 1.06.79 2.14v3.04c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .7Z"
+          />
+        </svg>
+        <span>GitHub <strong>Copilot</strong></span>
+      </a>
+      <div class="header-meta">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Agent mode</span>
+      </div>
+    </header>
+
+    <main id="experience">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="eyebrow"><span>Copilot app</span> / Your agent command center</div>
+        <h1 id="hero-title">Build at the<br /><span>speed of thought.</span></h1>
+        <p class="hero-copy">
+          Orchestrate agents, code, and collaboration from one shared workspace.
+          Explore what changes when your tools work together.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-button" id="explore-button" type="button">
+            Explore the workflow
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="m8.2 3.2 4.3 4.3a.7.7 0 0 1 0 1l-4.3 4.3-1-1L10.4 9H3V7.5h7.4L7.2 4.2l1-1Z" />
+            </svg>
+          </button>
+          <span class="keyboard-hint"><kbd>←</kbd><kbd>→</kbd> to navigate</span>
+        </div>
+      </section>
+
+      <section class="command-center" id="command-center" aria-label="Interactive Copilot app benefits">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+
+        <div class="app-window">
+          <div class="window-bar">
+            <div class="traffic-lights" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="repo-pill">
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M2 2.75A1.75 1.75 0 0 1 3.75 1h8.5A1.75 1.75 0 0 1 14 2.75v10.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25V2.75Zm1.5 7.75v2.75c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V10.5h-9Zm9-1.5V2.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25V9h9Z" />
+              </svg>
+              <span>octo-org / launchpad</span>
+            </div>
+            <div class="window-actions" aria-hidden="true"><i></i><i></i></div>
+          </div>
+
+          <div class="workspace">
+            <aside class="sidebar" aria-label="Sessions">
+              <div class="sidebar-heading">
+                <span>Sessions</span>
+                <button type="button" aria-label="New session">+</button>
+              </div>
+              <div class="session-list" id="session-list"></div>
+              <div class="user-row">
+                <span class="avatar">BR</span>
+                <span><strong>britni</strong><small>5 agents active</small></span>
+                <span class="more">•••</span>
+              </div>
+            </aside>
+
+            <div class="feature-stage">
+              <div class="stage-topline">
+                <span class="feature-index" id="feature-index">01 / 05</span>
+                <span class="live-pill"><i></i> Live workspace</span>
+              </div>
+
+              <div class="feature-content" aria-live="polite">
+                <div class="feature-icon" id="feature-icon"></div>
+                <p class="feature-kicker" id="feature-kicker"></p>
+                <h2 id="feature-title"></h2>
+                <p id="feature-description"></p>
+                <div class="feature-tags" id="feature-tags"></div>
+              </div>
+
+              <div class="demo-panel" id="demo-panel" aria-hidden="true"></div>
+
+              <div class="stage-controls">
+                <div class="progress-track" aria-hidden="true">
+                  <span id="progress-bar"></span>
+                </div>
+                <div class="arrow-controls">
+                  <button id="previous-button" type="button" aria-label="Previous benefit">
+                    <svg viewBox="0 0 16 16"><path d="m7.8 3.2-4.3 4.3a.7.7 0 0 0 0 1l4.3 4.3 1-1L5.6 9H13V7.5H5.6l3.2-3.3-1-1Z" /></svg>
+                  </button>
+                  <button id="next-button" type="button" aria-label="Next benefit">
+                    <svg viewBox="0 0 16 16"><path d="m8.2 3.2 4.3 4.3a.7.7 0 0 1 0 1l-4.3 4.3-1-1L10.4 9H3V7.5h7.4L7.2 4.2l1-1Z" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-tabs" id="benefit-tabs" role="tablist" aria-label="Copilot app benefits"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 GitHub, Inc.</p>
+      <p>From idea to merged pull request, without losing momentum.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
