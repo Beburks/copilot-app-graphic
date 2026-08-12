@@ -172,6 +172,7 @@ h1 span {
 }
 
 .step-tab {
+  position: relative;
   display: grid;
   gap: 0.7rem;
   align-items: center;
@@ -185,17 +186,46 @@ h1 span {
   cursor: pointer;
   text-align: left;
   transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+  animation: tab-invite 4.8s ease-in-out infinite;
 }
 
-.step-tab:hover {
+.step-tab:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.step-tab:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.step-tab:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.step-tab:nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+.step-tab:nth-child(6) {
+  animation-delay: 1.5s;
+}
+
+.step-tab:hover,
+.step-tab:focus-visible {
+  border-color: color-mix(in srgb, var(--feature) 55%, var(--border));
   background: rgba(255, 255, 255, 0.025);
   color: #c9d1d9;
+  outline: none;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--feature) 18%, transparent),
+    0 0 20px color-mix(in srgb, var(--feature) 18%, transparent);
+  animation-play-state: paused;
 }
 
 .step-tab[aria-selected="true"] {
   border-color: color-mix(in srgb, var(--feature) 35%, var(--border));
   background: color-mix(in srgb, var(--feature) 9%, var(--surface));
   color: var(--text);
+  box-shadow: inset 0 0 18px color-mix(in srgb, var(--feature) 7%, transparent),
+    0 0 16px color-mix(in srgb, var(--feature) 10%, transparent);
 }
 
 .tab-number {
@@ -520,6 +550,19 @@ kbd {
   from {
     opacity: 0;
     transform: translateY(9px);
+  }
+
+  @keyframes tab-invite {
+    0%,
+    72%,
+    100% {
+      border-color: transparent;
+      box-shadow: 0 0 0 transparent;
+    }
+    82% {
+      border-color: color-mix(in srgb, var(--feature) 38%, var(--border));
+      box-shadow: 0 0 18px color-mix(in srgb, var(--feature) 14%, transparent);
+    }
   }
   to {
     opacity: 1;
