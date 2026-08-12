@@ -168,11 +168,12 @@ h1 span {
 }
 
 .value-tab {
+  --tab-color: var(--feature);
   position: relative;
   display: grid;
   gap: 0.75rem;
   min-width: 0;
-  min-height: 112px;
+  min-height: 124px;
   padding: 1.2rem 1.3rem;
   grid-template-columns: 28px 1fr auto;
   align-items: center;
@@ -186,19 +187,26 @@ h1 span {
   transition: background 180ms ease, color 180ms ease, box-shadow 180ms ease;
 }
 
+.value-tab:nth-child(1) {
+  --tab-color: var(--purple);
+}
+
 .value-tab:last-child {
   border-right: 0;
 }
 
 .value-tab:nth-child(2) {
+  --tab-color: var(--blue);
   animation-delay: 0.35s;
 }
 
 .value-tab:nth-child(3) {
+  --tab-color: var(--green);
   animation-delay: 0.7s;
 }
 
 .value-tab:nth-child(4) {
+  --tab-color: var(--orange);
   animation-delay: 1.05s;
 }
 
@@ -218,9 +226,9 @@ h1 span {
 }
 
 .tab-number {
-  color: var(--feature);
+  color: var(--tab-color);
   font-family: var(--mono);
-  font-size: 0.58rem;
+  font-size: 0.64rem;
 }
 
 .value-tab strong,
@@ -229,11 +237,10 @@ h1 span {
 }
 
 .value-tab strong {
-  overflow: hidden;
-  font-size: 0.77rem;
-  font-weight: 600;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  color: var(--tab-color);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.18;
 }
 
 .value-tab small {
@@ -251,9 +258,9 @@ h1 span {
 }
 
 .value-tab[aria-selected="true"] .tab-state {
-  border-color: var(--feature);
-  background: var(--feature);
-  box-shadow: 0 0 9px var(--feature);
+  border-color: var(--tab-color);
+  background: var(--tab-color);
+  box-shadow: 0 0 9px var(--tab-color);
 }
 
 .value-stage {
